@@ -207,7 +207,7 @@
               </p>
               <div class="card-actions justify-end">
                 <div class="card w-full shrink-0 pt-4">
-                  <form>
+                  <form id="donationForm">
                     <div class="form-control">
                       <input
                         type="text"
@@ -217,7 +217,7 @@
                         required
                       />
                     </div>
-                    <div class="form-control mt-6">
+                    <div id="closeModal" class="form-control mt-6" >
                       <button
                         id="donate-now-a"
                         class="btn bg-[#B4F461] hover:bg-[#a9f038] text-xl text-gray-900"
@@ -233,23 +233,16 @@
         </section>
       </article>
       <!-- !Hero Section End -->
-      <!-- 🎉Congrats Section Start is Here -->
-      <section class="mx-auto w-1/3 lg:pb-10 hidden" id="confirmation-section">
-        <div class="card bg-base-100 w-96 shadow-xl">
-          <div class="card-body">
-            <h2 class="text-gray-900 text-3xl text-center font-bold tracking-wide">Congrats!</h2>
-            <div class="mx-auto">
-              <img class="w-8" src="./images/coin.png" alt="" />
-            </div>
-            <p class="text-center py-4" id="thank-you-message">
-              Thank you for your generosity! Your donation makes a difference!
-            </p>
-            <div class="card-actions justify-center">
-              <button class="btn" id="close-confirmation">Close Confirmation</button>
-            </div>
-          </div>
-        </div>
-      </section>
+ <!-- Popup Modal -->
+  <div id="successModal" class="modal">
+    <div class="modal-box">
+      <h3 class="font-bold text-lg">🎉 Congratulations!</h3>
+      <p class="py-4">You have donated successfully. Thank you for your generosity!</p>
+      <div class="modal-action">
+        <button class="btn btn-primary" id="closeModal">Close</button>
+      </div>
+    </div>
+  </div>
       <!-- !Congrats Section End is Here -->
       <!-- Donation History Section Start is Here -->
       <section id="show-history" class="hidden container mx-auto">
@@ -318,7 +311,6 @@
     </footer>
     <!-- JavaScript -->
     <script src="./js/index.js"></script>
-    <!-- <script src="./js/blog.js"></script> -->
     <script src="./js/utility.js"></script>
   </body>
 </html>
