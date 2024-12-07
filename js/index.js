@@ -1,127 +1,95 @@
-// Donation & History button OnClick Function is Here!
-// Function to handle button background toggling
-// function toggleButtonColors(clickedButtonId) {
-//     const donateButton = document.getElementById("btn-donation");
-//     const historyButton = document.getElementById("btn-history");
-  
-//     // if (clickedButtonId === "btn-donation") {
-//     //   donateButton.style.backgroundColor = "#B4F461"; // Light green for "Donate"
-//       historyButton.style.hover.backgroundColor = "#B4F461"; // Light transparent gray for "History"
-//     } else if (clickedButtonId === "btn-history") {
-//       historyButton.style.backgroundColor = "#B4F461"; // Light green for "History"
-//       donateButton.style.backgroundColor = "rgba(17, 17, 17, 0.3)"; // Light transparent gray for "Donate"
-//     }
-//   }
-  
-  // Add event listeners for buttons
-//   document.getElementById("btn-donation").addEventListener("click", function () {
-//     toggleButtonColors("btn-history");
-//     alert("Thank you for your donation!");
-//   });
-  
-//   document.getElementById("btn-history").addEventListener("click", function () {
-//     toggleButtonColors("btn-history");
-//     alert("Viewing donation history!");
-//   });
-  
+const accountBalanceMain = document.getElementById("account-balance");
 
-
-
-
-// Function to toggle button colors
-
-  
-  // Attach event listeners to buttons
-//   document.getElementById("btn-donation").addEventListener("click", () => {
-//     toggleButtonColors("btn-donation");
-//     alert("You clicked the Donate button!");
-//   });
-  
-//   document.getElementById("btn-history").addEventListener("click", () => {
-//     toggleButtonColors("btn-history");
-//     alert("You clicked the History button!");
-//   });
-  
-  // Handle the donation form submission
-//   document.getElementById("donate-btn").addEventListener("click", function () {
-//     const name = document.getElementById("name").value;
-//     const email = document.getElementById("email").value;
-//     const amount = document.getElementById("amount").value;
-  
-//     if (name && email && amount) {
-//       alert(`Thank you, ${name}! Your donation of BDT ${amount} has been received.`);
-//       // Reset the form
-//       document.getElementById("name").value = "";
-//       document.getElementById("email").value = "";
-//       document.getElementById("amount").value = "";
-//     } else {
-//       alert("Please fill out all the fields before submitting.");
-//     }
-//   });
-  
-
-
-
-// Handle the donation form submission
-document.getElementById("btn-donation").addEventListener("click", function () {
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const amount = document.getElementById("amount").value;
-  
-    if (name && email && amount) {
-      alert(`Thank you, ${name}! Your donation of BDT ${amount} has been received.`);
-      // Reset the form
-      document.getElementById("name").value = "";
-      document.getElementById("email").value = "";
-      document.getElementById("amount").value = "";
-    } else {
-      alert("Please fill out all the fields before submitting.");
-    }
-  });
-  
-
-  // Initial account balance
-  // Initial account balance and donation total
-let accountBalance = 5000; // Assume an initial balance of 5000 BDT
-let totalDonations = 0;
-
-// Function to handle donation input
-function handleDonation() {
-  // Get input values
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const amount = parseFloat(document.getElementById("amount").value);
-
-  // Validate input
-  if (!name || !email || isNaN(amount)) {
-    alert("Please fill out all fields and enter a valid donation amount.");
-    return;
-  }
-  if (amount <= 0) {
-    alert("Donation amount must be a positive number.");
-    return;
-  }
-  if (amount > accountBalance) {
-    alert("Insufficient account balance.");
-    return;
-  }
-
-  // Update total donations and account balance
-  totalDonations += amount;
-  accountBalance -= amount;
-
-  // Update the donation banner
-  document.getElementById("total-donations").textContent = `BDT ${totalDonations}`;
-  document.getElementById("account-balance").textContent = `BDT ${accountBalance}`;
-
-  // Display success message
-  alert(`Thank you, ${name}! Your donation of BDT ${amount} has been received.`);
-
-  // Reset the form
-  document.getElementById("name").value = "";
-  document.getElementById("email").value = "";
-  document.getElementById("amount").value = "";
+// Balances for each project
+let mainAccountBalance = parseInt(accountBalanceMain.textContent, 10);
+let projectBalances = {
+  noakhali: 0,
+  feni: 0,
+  quota: 0,
+};
+function updateElementText(id, value) {
+  document.getElementById(id).textContent = value;
+}
+function addToHistory(project, amount) {
+  const historyContainer = document.getElementById("transaction-container");
+  const historyItem = document.createElement("div");
+  historyItem.className = "card bg-gray-100 p-4 my-2 rounded-lg shadow-lg";
+  historyItem.innerHTML = `
+    <p class="text-base"><strong>${amount}</strong> Taka is Donated for flood at ${project} Bangladesh!</p>
+    <p><strong>Date:</strong> ${new Date().toLocaleString()}</p>
+  `;
+  historyContainer.appendChild(historyItem);
 }
 
-// Attach event listener to the donate button
-document.getElementById("donate-btn").addEventListener("click", handleDonation);
+function handleDonation(project, inputFieldId, projectDisplayId) {
+  const inputField = document.getElementById(inputFieldId);
+  const donationAmount = parseInt(inputField.value, 10);
+
+  // Validate input
+  if (isNaN(donationAmount) || donationAmount <= 0) {
+    alert("Please enter a valid donation amount.");
+    return;
+  }
+
+  if (donationAmount > mainAccountBalance) {
+    alert("Insufficient funds in the main account.");
+    return;
+  }
+  mainAccountBalance -= donationAmount;
+  projectBalances[project] += donationAmount;
+
+  // Update the UI
+  updateElementText("account-balance", mainAccountBalance);
+  updateElementText(projectDisplayId, projectBalances[project]);
+  addToHistory(project, donationAmount);
+
+  // Clear input field and show confirmation
+  inputField.value = "";
+  alert(`                        Congrats!🎉
+    Thank you for donating ${donationAmount} BDT to the ${project} project! 
+                       Your donation makes a difference!`);
+
+}
+document.getElementById("donate-now").addEventListener("click", (event) => {
+  event.preventDefault();
+  handleDonation("noakhali", "donation-field", "donate-amount");
+});
+
+document.getElementById("donate-now-f").addEventListener("click", (event) => {
+  event.preventDefault();
+  handleDonation("feni", "add-donation", "donate-amount-F");
+});
+
+document.getElementById("donate-now-a").addEventListener("click", (event) => {
+  event.preventDefault();
+  handleDonation("quota", "donate-donation-a", "donate-amount-a");
+});
+
+// Toggle Donation and History Sections
+document.getElementById("show-donation-btn").addEventListener("click", () => {
+  document.getElementById("main-content").classList.remove("hidden");
+  document.getElementById("show-history").classList.add("hidden");
+});
+
+document.getElementById("show-history-btn").addEventListener("click", () => {
+  document.getElementById("main-content").classList.add("hidden");
+  document.getElementById("show-history").classList.remove("hidden");
+});
+// Select the buttons
+const donationBtn = document.getElementById("show-donation-btn");
+const historyBtn = document.getElementById("show-history-btn");
+
+function resetButtonColors() {
+  donationBtn.style.backgroundColor = ""; 
+  historyBtn.style.backgroundColor = "";
+}
+
+donationBtn.addEventListener("click", () => {
+  resetButtonColors(); 
+  donationBtn.style.backgroundColor = "#B4F461"; 
+});
+
+historyBtn.addEventListener("click", () => {
+  resetButtonColors(); 
+  historyBtn.style.backgroundColor = "#B4F461";
+});
