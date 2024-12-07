@@ -45,10 +45,9 @@ function handleDonation(project, inputFieldId, projectDisplayId) {
 
   // Clear input field and show confirmation
   inputField.value = "";
-  alert(`                        Congrats!🎉
+  alert(`                                             Congrats!🎉
     Thank you for donating ${donationAmount} BDT to the ${project} project! 
                        Your donation makes a difference!`);
-
 }
 document.getElementById("donate-now").addEventListener("click", (event) => {
   event.preventDefault();
@@ -80,16 +79,16 @@ const donationBtn = document.getElementById("show-donation-btn");
 const historyBtn = document.getElementById("show-history-btn");
 
 function resetButtonColors() {
-  donationBtn.style.backgroundColor = ""; 
+  donationBtn.style.backgroundColor = "";
   historyBtn.style.backgroundColor = "";
 }
 
 donationBtn.addEventListener("click", () => {
-  resetButtonColors(); 
-  donationBtn.style.backgroundColor = "#B4F461"; 
+  resetButtonColors();
+  donationBtn.style.backgroundColor = "#B4F461";
 });
 
 historyBtn.addEventListener("click", () => {
-  resetButtonColors(); 
+  resetButtonColors();
   historyBtn.style.backgroundColor = "#B4F461";
 });

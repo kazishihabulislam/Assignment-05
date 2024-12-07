@@ -10,6 +10,7 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/bebff4b1c8.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <!-- Navbar Start -->
@@ -58,260 +59,92 @@
           </div>
         </div>
       </section>
-      <section>
-        <div
-          class="flex w-full mx-auto justify-center items-center lg:py-14"
-        >
-          <div class="mx-3 lg:block hidden">
-            <a id="show-donation-blog" class="btn btn-ghost text-xl bg-[#B4F461]">Donation</a>
-          </div>
-          <div class="mx-3 lg:block hidden">
-            <a class="btn btn-ghost text-xl bg-[#B4F461]">History</a>
-          </div>
-        </div>
-      </section>
     </header>
     <!-- !Navbar End -->
 
-    <main class="lg:mt-80 container mx-auto lg:pb-10">
+    <main class="lg:mt-40 mt-20 container mx-auto lg:pb-10">
       <!-- Hero Section Start -->
-      <article id="main-content-blog" class="grid gap-10 grid-cols-1 mt-20 hidden">
-        <section>
-          <div
-            class="flex flex-col lg:flex-row lg:justify-between card card-side bg-base-100 shadow-2xl p-6"
-          >
-            <figure>
-              <img src="./images/noakhali.png" alt="Movie" />
-            </figure>
-            <div class="lg:card-body lg:w-3/5 pt-4">
-              <div class="navbar-end">
-                <a class="btn">
-                  <img src="./images/coin.png" alt="" />
-                  <span id="donate-amount">0</span><span>BDT</span></a
-                >
-              </div>
-              <h2 class="card-title text-3xl text-gray-900 font-semibold py-4">
-                Donate for Flood at Noakhali, Bangladesh
-              </h2>
-              <p class="text-lg text-gray-600">
-                The recent devastating floods in Noakhali, Bangladesh, have left
-                thousands of families homeless, struggling for basic necessities
-                like food, clean water, and shelter. Your support can bring hope
-                to those affected by this natural disaster. By donating, you can
-                help provide emergency relief, rebuild homes, and restore
-                livelihoods for the flood victims. Together, we can make a
-                difference in their lives during this critical time.
-              </p>
-              <div class="card-actions justify-end">
-                <div class="card w-full shrink-0 pt-4">
-                  <form class="">
-                    <div class="form-control">
-                      <input
-                        type="text"
-                        placeholder="Write Donation Amount"
-                        id="donation-field"
-                        class="input input-bordered"
-                        required
-                      />
-                    </div>
-                    <div class="form-control mt-6">
-                      <button
-                        id="donate-now"
-                        class="btn bg-[#B4F461] hover:bg-[#a9f038] text-xl text-gray-900"
-                      >
-                        Donate Now
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
+      <section class="container mx-auto" >
+        <div class="flex items-center">
+          <h3 class="text-4xl text-gray-900 font-bold py-14">Important FAQ</h3>
+          <i class="px-2 text-gray-900 text-4xl fa-solid fa-question"></i>
+        </div>
+        <div class="grid grid-cols-1 gap-6">
+          <div class="collapse collapse-plus bg-base-200">
+            <input type="radio" name="my-accordion-3" checked="checked" />
+            <div class="collapse-title text-xl font-medium"> What is the purpose of the "Donate to Flood Bangladesh" initiative?</div>
+            <div class="collapse-content">
+              <p>The initiative aims to provide emergency relief, food, clean water, medical supplies, and shelter to communities affected by devastating floods in Bangladesh.</p>
             </div>
           </div>
-        </section>
-        <section>
-          <div
-            class="flex lg:justify-between flex-col lg:flex-row card card-side bg-base-100 lg:shadow-2xl p-6"
-          >
-            <figure>
-              <img src="./images/feni.png" alt="Movie" />
-            </figure>
-            <div class="lg:card-body lg:w-3/5 pt-4">
-              <div class="navbar-end">
-                <a class="btn">
-                  <img src="./images/coin.png" alt="" />
-                  <span id="donate-amount-F">0</span><span>BDT</span></a
-                >
-              </div>
-              <h2 class="card-title text-3xl text-gray-900 font-semibold py-4">
-                Donate for Flood Relief in Feni,Bangladesh
-              </h2>
-              <p class="text-lg text-gray-600">
-                The floods in Feni, Bangladesh, have caused widespread
-                devastation, displacing families and destroying homes and
-                livelihoods. Immediate help is needed to provide food, clean
-                water, medical aid, and shelter to those affected. Your donation
-                can bring hope and relief to the victims, helping them rebuild
-                their lives during this challenging time. Together, we can make
-                a meaningful impact and support the people of Feni in their time
-                of need.
+          <div class="collapse collapse-plus bg-base-200">
+            <input type="radio" name="my-accordion-3" checked="checked" />
+            <div class="collapse-title text-xl font-medium">How can I donate to help flood victims in Bangladesh?</div>
+            <div class="collapse-content">
+              <p>You can donate through our official website by clicking the "Donate Now" button. We accept payments via credit cards, bank transfers, mobile banking, and popular online payment platforms.
+  
               </p>
-              <div class="card-actions justify-end">
-                <div class="card w-full shrink-0 pt-4">
-                  <form>
-                    <div class="form-control">
-                      <input
-                        type="text"
-                        placeholder="Write Donation Amount"
-                        id="add-donation"
-                        class="input input-bordered"
-                        required
-                      />
-                    </div>
-                    <div class="form-control mt-6">
-                      <button
-                        id="donate-now-f"
-                        class="btn bg-[#B4F461] hover:bg-[#a9f038] text-xl text-gray-900"
-                      >
-                        Donate Now
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
             </div>
           </div>
-        </section>
-        <section class="lg:pb-10">
-          <div
-            class="flex lg:justify-between flex-col lg:flex-row card card-side bg-base-100 lg:shadow-2xl p-6 mx-6"
-          >
-            <figure>
-              <img src="./images/quota-protest.png" alt="Movie" />
-            </figure>
-            <div class="lg:card-body lg:w-3/5 pt-4">
-              <div class="navbar-end">
-                <a class="btn">
-                  <img src="./images/coin.png" alt="" />
-                  <span id="donate-amount-a">0</span><span>BDT</span></a
-                >
-              </div>
-              <h2 class="card-title text-3xl text-gray-900 font-semibold py-4">
-                Aid for Injured in the Quota Movement
-              </h2>
-              <p class="text-lg text-gray-600">
-                The Quota Movement in Bangladesh brought attention to important
-                social issues but also left many individuals injured during
-                protests. These injured individuals, many of them students,
-                require urgent medical care, rehabilitation, and financial
-                assistance to recover and move forward. Your support can help
-                cover medical expenses, provide essential care, and bring hope
-                to those affected. Stand with them in their time of need and
-                contribute to their healing journey.
-              </p>
-              <div class="card-actions justify-end">
-                <div class="card w-full shrink-0 pt-4">
-                  <form>
-                    <div class="form-control">
-                      <input
-                        type="text"
-                        placeholder="Write Donation Amount"
-                        id="donate-donation-a"
-                        class="input input-bordered"
-                        required
-                      />
-                    </div>
-                    <div class="form-control mt-6">
-                      <button
-                        id="donate-now-a"
-                        class="btn bg-[#B4F461] hover:bg-[#a9f038] text-xl text-gray-900"
-                      >
-                        Donate Now
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
+          <div class="collapse collapse-plus bg-base-200">
+            <input type="radio" name="my-accordion-3" checked="checked" />
+            <div class="collapse-title text-xl font-medium">Are my donations tax-deductible?
+            </div>
+            <div class="collapse-content">
+              <p>Yes, donations made to registered organizations supporting this initiative are tax-deductible. Please check your country’s tax laws for specific details.</p>
             </div>
           </div>
-        </section>
-      </article>
-      <!-- !Hero Section End -->
-      <!-- Hero Section Start -->
-      <div class="grid grid-cols-1 gap-6">
-        <div class="collapse collapse-plus bg-base-200">
-          <input type="radio" name="my-accordion-3" checked="checked" />
-          <div class="collapse-title text-xl font-medium"> What is the purpose of the "Donate to Flood Bangladesh" initiative?</div>
-          <div class="collapse-content">
-            <p>The initiative aims to provide emergency relief, food, clean water, medical supplies, and shelter to communities affected by devastating floods in Bangladesh.</p>
+          <div class="collapse collapse-plus bg-base-200">
+            <input type="radio" name="my-accordion-3" checked="checked" />
+            <div class="collapse-title text-xl font-medium">How will my donation be used?</div>
+            <div class="collapse-content">
+              <p>Your contributions will fund essential relief efforts, including food distribution, emergency medical aid, clean water access, and rebuilding homes for flood-affected families.</p>
+            </div>
+          </div>
+          <div class="collapse collapse-plus bg-base-200">
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title text-xl font-medium">Is there a minimum amount required for donation?</div>
+            <div class="collapse-content">
+              <p>No, there is no minimum donation amount. Every contribution, no matter how small, makes a significant impact on flood relief efforts.</p>
+            </div>
+          </div>
+          <div class="collapse collapse-plus bg-base-200">
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title text-xl font-medium">Can I volunteer for flood relief efforts instead of donating?</div>
+            <div class="collapse-content">
+              <p>Yes, we welcome volunteers! If you are interested, visit our website to sign up for volunteering opportunities in Bangladesh.</p>
+            </div>
+          </div>
+          <div class="collapse collapse-plus bg-base-200">
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title text-xl font-medium">What measures ensure that donations reach the flood victims?</div>
+            <div class="collapse-content">
+              <p>We work with trusted local partners and monitor all relief operations to ensure transparency and that donations directly benefit those in need.</p>
+            </div>
+          </div>
+          <div class="collapse collapse-plus bg-base-200">
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title text-xl font-medium">Can I donate non-monetary items such as clothes and food?</div>
+            <div class="collapse-content">
+              <p>Yes, we accept non-monetary donations like clothing, food, and medical supplies. Please contact our team to arrange drop-off or shipment details.</p>
+            </div>
+          </div>
+          <div class="collapse collapse-plus bg-base-200">
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title text-xl font-medium">How can I track the impact of my donation?</div>
+            <div class="collapse-content">
+              <p>Donors receive updates through email, including detailed reports and photos of how their contributions have helped flood victims.</p>
+            </div>
+          </div>
+          <div class="collapse collapse-plus bg-base-200">
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title text-xl font-medium">Are there long-term plans to support flood-affected areas?</div>
+            <div class="collapse-content">
+              <p>Beyond immediate relief, we are investing in rebuilding infrastructure, improving flood defenses, and providing resources for sustainable community development.</p>
+            </div>
           </div>
         </div>
-        <div class="collapse collapse-plus bg-base-200">
-          <input type="radio" name="my-accordion-3" checked="checked" />
-          <div class="collapse-title text-xl font-medium">How can I donate to help flood victims in Bangladesh?</div>
-          <div class="collapse-content">
-            <p>You can donate through our official website by clicking the "Donate Now" button. We accept payments via credit cards, bank transfers, mobile banking, and popular online payment platforms.
-
-            </p>
-          </div>
-        </div>
-        <div class="collapse collapse-plus bg-base-200">
-          <input type="radio" name="my-accordion-3" checked="checked" />
-          <div class="collapse-title text-xl font-medium">Are my donations tax-deductible?
-          </div>
-          <div class="collapse-content">
-            <p>Yes, donations made to registered organizations supporting this initiative are tax-deductible. Please check your country’s tax laws for specific details.</p>
-          </div>
-        </div>
-        <div class="collapse collapse-plus bg-base-200">
-          <input type="radio" name="my-accordion-3" checked="checked" />
-          <div class="collapse-title text-xl font-medium">How will my donation be used?</div>
-          <div class="collapse-content">
-            <p>Your contributions will fund essential relief efforts, including food distribution, emergency medical aid, clean water access, and rebuilding homes for flood-affected families.</p>
-          </div>
-        </div>
-        <div class="collapse collapse-plus bg-base-200">
-          <input type="radio" name="my-accordion-3" />
-          <div class="collapse-title text-xl font-medium">Is there a minimum amount required for donation?</div>
-          <div class="collapse-content">
-            <p>No, there is no minimum donation amount. Every contribution, no matter how small, makes a significant impact on flood relief efforts.</p>
-          </div>
-        </div>
-        <div class="collapse collapse-plus bg-base-200">
-          <input type="radio" name="my-accordion-3" />
-          <div class="collapse-title text-xl font-medium">Can I volunteer for flood relief efforts instead of donating?</div>
-          <div class="collapse-content">
-            <p>Yes, we welcome volunteers! If you are interested, visit our website to sign up for volunteering opportunities in Bangladesh.</p>
-          </div>
-        </div>
-        <div class="collapse collapse-plus bg-base-200">
-          <input type="radio" name="my-accordion-3" />
-          <div class="collapse-title text-xl font-medium">What measures ensure that donations reach the flood victims?</div>
-          <div class="collapse-content">
-            <p>We work with trusted local partners and monitor all relief operations to ensure transparency and that donations directly benefit those in need.</p>
-          </div>
-        </div>
-        <div class="collapse collapse-plus bg-base-200">
-          <input type="radio" name="my-accordion-3" />
-          <div class="collapse-title text-xl font-medium">Can I donate non-monetary items such as clothes and food?</div>
-          <div class="collapse-content">
-            <p>Yes, we accept non-monetary donations like clothing, food, and medical supplies. Please contact our team to arrange drop-off or shipment details.</p>
-          </div>
-        </div>
-        <div class="collapse collapse-plus bg-base-200">
-          <input type="radio" name="my-accordion-3" />
-          <div class="collapse-title text-xl font-medium">How can I track the impact of my donation?</div>
-          <div class="collapse-content">
-            <p>Donors receive updates through email, including detailed reports and photos of how their contributions have helped flood victims.</p>
-          </div>
-        </div>
-        <div class="collapse collapse-plus bg-base-200">
-          <input type="radio" name="my-accordion-3" />
-          <div class="collapse-title text-xl font-medium">Are there long-term plans to support flood-affected areas?</div>
-          <div class="collapse-content">
-            <p>Beyond immediate relief, we are investing in rebuilding infrastructure, improving flood defenses, and providing resources for sustainable community development.</p>
-          </div>
-        </div>
-      </div>
+      </section>
       <!-- !Hero Section End -->
     </main>
 
