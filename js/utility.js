@@ -33,14 +33,12 @@ function getInputByText(id, value) {
     getInputByText("account-balance", mainAccountBalance);
     getInputByText(projectDisplayId, projectBalances[project]);
     addToHistory(project, donationAmount);
-  
     // Clear input field and show confirmation
     inputField.value = "";
     alert(`                                             Congrats!🎉
       Thank you for donating ${donationAmount} BDT to the ${project} project! 
                          Your donation makes a difference!`);
   }
-
   function resetButtonColors() {
     donationBtn.style.backgroundColor = "";
     historyBtn.style.backgroundColor = "";
